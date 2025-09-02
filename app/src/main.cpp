@@ -4,8 +4,6 @@
 #include "imgui.h"
 #include "rlImGui.h"
 
-
-// DPI scaling functions
 float ScaleToDPIF(float value)
 {
     return GetWindowScaleDPI().x * value;
@@ -18,8 +16,6 @@ int ScaleToDPII(int value)
 
 int main(int argc, char* argv[])
 {
-	// Initialization
-	//--------------------------------------------------------------------------------------
 	int screenWidth = 1280;
 	int screenHeight = 800;
 
@@ -30,16 +26,13 @@ int main(int argc, char* argv[])
 
 	Texture image = LoadTexture("resources/parrots.png");
 
-	// Main game loop
-	while (!WindowShouldClose())    // Detect window close button or ESC key
+	while (!WindowShouldClose())
 	{
 		BeginDrawing();
 		ClearBackground(DARKGRAY);
 
-		// start ImGui Conent
 		rlImGuiBegin();
 
-		// show ImGui Content
 		bool open = true;
 		if (ImGui::Begin("Test Window", &open))
 		{
@@ -49,19 +42,14 @@ int main(int argc, char* argv[])
 		}
 		ImGui::End();
 
-		// end ImGui Content
 		rlImGuiEnd();
 
 		EndDrawing();
-		//----------------------------------------------------------------------------------
 	}
 
-	// De-Initialization
-	//--------------------------------------------------------------------------------------   
     rlImGuiShutdown();
 	UnloadTexture(image);
-	CloseWindow();        // Close window and OpenGL context
-	//--------------------------------------------------------------------------------------
+	CloseWindow();
 
 	return 0;
 }
