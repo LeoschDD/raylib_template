@@ -4,8 +4,8 @@ project(raylib_template)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-file(GLOB_RECURSE APP_SRC "${CMAKE_SOURCE_DIR}/app/src/*.cpp")
-set(APP_INCLUDE "${CMAKE_SOURCE_DIR}/app/include")
+file(GLOB_RECURSE APP_SRC "${CMAKE_SOURCE_DIR}/application/src/*.cpp")
+set(APP_INCLUDE "${CMAKE_SOURCE_DIR}/application/include")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
